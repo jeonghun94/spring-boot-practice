@@ -8,7 +8,7 @@ import java.util.Optional;
 
 import hello.firstspring.domain.Member;
 
-public class MeomoryMemberRepository implements MemberRepository {
+public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;

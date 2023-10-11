@@ -4,7 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import hello.firstspring.domain.Member;
-import hello.firstspring.repository.MeomoryMemberRepository;
+import hello.firstspring.repository.MemoryMemberRepository;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 
 public class MemoryMemberRepositoryTests {
 
-    MeomoryMemberRepository repository = new MeomoryMemberRepository();
+    MemoryMemberRepository repository = new MemoryMemberRepository();
 
     @AfterEach
     public void afterEach() {
@@ -56,6 +56,11 @@ public class MemoryMemberRepositoryTests {
         repository.save(member2);
 
         List<Member> result = repository.findAll();
+
+        result.forEach(
+            member -> System.out.println(member.getId() +"::"+ member.getName())
+        );
+
         assertThat(result.size()).isEqualTo(2);
     }
 }
