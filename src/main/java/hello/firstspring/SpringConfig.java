@@ -1,8 +1,10 @@
 package hello.firstspring;
 
-import hello.firstspring.repository.JdbcMemberRepository;
-import hello.firstspring.repository.MemberRepository;
+import hello.firstspring.repository.JdbcTemplateMemberRepository;
 // import hello.firstspring.repository.MemoryMemberRepository;
+// import hello.firstspring.repository.JdbcMemberRepository;
+
+import hello.firstspring.repository.MemberRepository;
 import hello.firstspring.service.MemberService;
 import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
@@ -25,6 +27,7 @@ public class SpringConfig {
   @Bean
   public MemberRepository memberRepository() {
     // return new MemoryMemberRepository();
-    return new JdbcMemberRepository(dataSource);
+    // return new JdbcMemberRepository(dataSource);
+    return new JdbcTemplateMemberRepository(dataSource);
   }
 }
