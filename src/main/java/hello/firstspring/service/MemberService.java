@@ -3,9 +3,13 @@ package hello.firstspring.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import hello.firstspring.domain.Member;
 import hello.firstspring.repository.MemberRepository;
 
+
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
